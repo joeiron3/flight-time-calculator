@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +13,45 @@
 
     <h1>Flight Time Calculator</h1>
 
-    <label>Block Off</label>
-    <input type="time" id="blockOff">
+    <label for="blockOff">Block Off</label>
+    <input
+        type="text"
+        id="blockOff"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); calculate();">
 
-    <label>Takeoff</label>
-    <input type="time" id="takeoff">
+    <label for="takeoff">Takeoff</label>
+    <input
+        type="text"
+        id="takeoff"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); calculate();">
 
-    <label>Landing</label>
-    <input type="time" id="landing">
+    <label for="landing">Landing</label>
+    <input
+        type="text"
+        id="landing"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); calculate();">
 
-    <label>Block On</label>
-    <input type="time" id="blockOn">
+    <label for="blockOn">Block On</label>
+    <input
+        type="text"
+        id="blockOn"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); calculate();">
 
-    <button onclick="calculate()">Calculate</button>
+    <button onclick="resetForm()" class="reset-btn">
+        Reset
+    </button>
 
     <div class="results">
         <p>Block Time: <span id="blockTime">00:00</span></p>
