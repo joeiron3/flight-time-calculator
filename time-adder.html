@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Addition Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Time Adder</h1>
+
+    <div class="nav-buttons">
+
+        <a href="index.html" class="nav-btn">
+            Flight Time
+        </a>
+
+        <a href="time-adder.html" class="nav-btn active">
+            Time Adder
+        </a>
+
+    </div>
+
+    <label>Time 1</label>
+    <input type="text" id="time1"
+           inputmode="numeric"
+           maxlength="5"
+           placeholder="HHMM"
+           oninput="formatTimeInput(this)">
+
+    <label>Time 2</label>
+    <input type="text" id="time2"
+           inputmode="numeric"
+           maxlength="5"
+           placeholder="HHMM"
+           oninput="formatTimeInput(this)">
+
+    <label>Time 3</label>
+    <input type="text" id="time3"
+           inputmode="numeric"
+           maxlength="5"
+           placeholder="HHMM"
+           oninput="formatTimeInput(this)">
+
+    <label>Time 4</label>
+    <input type="text" id="time4"
+           inputmode="numeric"
+           maxlength="5"
+           placeholder="HHMM"
+           oninput="formatTimeInput(this)">
+
+    <button onclick="addTimes()">
+        Calculate
+    </button>
+
+    <button onclick="resetAdder()" class="reset-btn">
+    Reset
+    </button>
+
+    <div class="results-table">
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Total
+            </span>
+
+            <span class="result-time" id="totalTime">
+                00:00
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="time-adder.js"></script>
+
+</body>
+</html>

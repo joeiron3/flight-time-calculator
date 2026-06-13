@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,52 +13,99 @@
 
     <h1>Flight Time Calculator</h1>
 
-    <label>Block Off</label>
+    <div class="nav-buttons">
+
+    <a href="index.html" class="nav-btn active">
+        Flight Time
+    </a>
+
+    <a href="time-adder.html" class="nav-btn">
+        Time Adder
+    </a>
+
+</div>
+
+    <label id="blockOffLabel" for="blockOff">
+        Block Off
+        <span id="blockOffDot" class="warning-dot">● Modified</span>
+    </label>
+
     <input
-    type="text"
-    id="blockOff"
-    inputmode="numeric"
-    placeholder="HH:MM"
-    maxlength="5"
-    oninput="formatTimeInput(this)">
+        type="text"
+        id="blockOff"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); markModified('blockOff');">
 
-    <label>Takeoff</label>
-    <input type="text"
-    id="takeoff"
-    inputmode="numeric"
-    placeholder="HH:MM"
-    maxlength="5"
-    oninput="formatTimeInput(this)">
+    <label id="takeoffLabel" for="takeoff">
+        Takeoff
+        <span id="takeoffDot" class="warning-dot">● Modified</span>
+    </label>
 
-    <label>Landing</label>
-    <input type="text"
-    id="landing"
-    inputmode="numeric"
-    placeholder="HH:MM"
-    maxlength="5"
-    oninput="formatTimeInput(this)">
+    <input
+        type="text"
+        id="takeoff"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); markModified('takeoff');">
 
-    <label>Block On</label>
-    <input type="text"
-    id="blockOn"
-    inputmode="numeric"
-    placeholder="HH:MM"
-    maxlength="5"
-    oninput="formatTimeInput(this)">
+    <label id="landingLabel" for="landing">
+        Landing
+        <span id="landingDot" class="warning-dot">● Modified</span>
+    </label>
 
-    <button onclick="calculate()">Calculate</button>
+    <input
+        type="text"
+        id="landing"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); markModified('landing');">
+
+    <label id="blockOnLabel" for="blockOn">
+        Block On
+        <span id="blockOnDot" class="warning-dot">● Modified</span>
+    </label>
+
+    <input
+        type="text"
+        id="blockOn"
+        inputmode="numeric"
+        maxlength="5"
+        placeholder="HHMM"
+        oninput="formatTimeInput(this); markModified('blockOn');">
+
+    <button onclick="calculate()">
+        Calculate
+    </button>
 
     <button onclick="resetForm()" class="reset-btn">
         Reset
     </button>
 
-    <div class="results">
-        <p>Block Time: <span id="blockTime">00:00</span></p>
-        <p>Time In Service: <span id="serviceTime">00:00</span></p>
+    <div class="results-table">
+
+        <div class="result-row">
+            <span class="result-label">Block Time</span>
+            <span class="result-time" id="blockTime">00:00</span>
+        </div>
+
+        <div class="result-row">
+            <span class="result-label">Time In Service</span>
+            <span class="result-time" id="serviceTime">00:00</span>
+        </div>
+
     </div>
 
-</div>
+    <!-- <div class="results">
+        <p>Block Time: <span id="blockTime">00:00</span></p>
+        <p>Time In Service: <span id="serviceTime">00:00</span></p>
+    </div> -->
 
+
+</div>
 
 <script src="script.js"></script>
 
