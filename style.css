@@ -41,3 +41,9 @@ button {
     margin-top: 25px;
     font-size: 22px;
 }
+
+.reset-btn {
+    margin-top: 10px;
+    background: #d9534f;
+    color: white;
+}
